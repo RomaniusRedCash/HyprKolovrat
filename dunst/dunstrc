@@ -1,0 +1,75 @@
+
+
+
+[global]
+    mouse_left_click = do_action, close_current
+
+
+    follow = mouse
+
+    background = "#ff0000"
+    foreground = "#000000"
+    frame_color = "#000000"
+
+    frame_width = 2
+    separator_color = frame
+
+
+    ### Geometry ###
+
+    width = 300
+
+    origin = top-right
+
+    offset = (5, 5)
+
+    scale = 0
+
+    notification_limit = 20
+
+    ### Progress bar ###
+
+    progress_bar = true
+
+    progress_bar_height = 10
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    progress_bar_corner_radius = 0
+    progress_bar_corners = all
+
+    icon_corner_radius = 0
+
+    icon_corners = all
+
+    indicate_hidden = yes
+
+    transparency = 0
+
+    separator_height = 2
+
+    padding = 8
+
+    horizontal_padding = 8
+
+    text_icon_padding = 0
+
+    ### Text ###
+
+    font = VHS + icons 10
+
+    ### Icons ###
+
+    enable_recursive_icon_lookup = true
+
+    icon_theme = Adwaita
+
+    # Align icons left/right/top/off
+    icon_position = left
+
+    min_icon_size = 32
+    max_icon_size = 64
+
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+
+

@@ -1,0 +1,9 @@
+{
+    "name": "hyprland_config_lua",
+    "files": [
+        {
+            "recursive": true,
+            "filters": ["*.lua", "*.sh"]
+        }
+    ]
+}

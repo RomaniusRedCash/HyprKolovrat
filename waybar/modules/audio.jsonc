@@ -1,0 +1,59 @@
+{
+    "wireplumber#audio": {
+        "node-type": "Audio/Sink",
+        "format": "<span size='19pt' rise='-4pt'></span>{volume}%",
+        "format-muted": "<span size='19pt' rise='-4pt'></span>",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "max-volume": 100,
+        "scroll-step": 1
+    },
+    "wireplumber#microphone": {
+        "node-type": "Audio/Source",
+        "format": "<span size='19pt' rise='-4pt'></span>{volume}%",
+        "format-muted": "<span size='19pt' rise='-4pt'></span>",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-click-right": "qpwgraph",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%-",
+        "max-volume": 100,
+        "hide-on-error": true
+    },
+
+    "custom/mic": {
+        "exec": "wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q 'MUTED' && echo '' || wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | awk '{print \" \"$2*100\"%\"}'",
+        "exec-if": "wpctl status | grep -q 'Sinks:'", // Проверяет, есть ли вообще источники записи
+        "interval": 2,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "format": "{}"
+    },
+     "custom/previous": {
+        "format" : "⏮",
+        "tooltip": false,
+        "on-click": "playerctl previous"
+    },
+    "custom/pause": {
+        "interval": 1,
+        "format" : "{}",
+        "exec": "if [ \"$(playerctl status 2>/dev/null)\" = 'Playing' ]; then echo '⏸'; else echo '⏵'; fi",
+        "tooltip": false,
+        "on-click": "playerctl play-pause",
+        "on-click-right": "strawberry",
+
+        "on-scroll-up": "strawberry  --volume-up",
+        "on-scroll-down": "strawberry  --volume-down",
+    },
+    "custom/next": {
+        "tooltip": false,
+        "format" : "⏭",
+        "on-click": "playerctl next"
+    },
+    "group/playctl": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/previous",
+            "custom/pause",
+            "custom/next"
+        ]
+    }
+}

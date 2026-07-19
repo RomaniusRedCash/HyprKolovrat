@@ -1,0 +1,15 @@
+{
+  "include": [
+    "~/.config/waybar/modules.jsonc"
+  ],
+  "layer": "top",
+  "swap-icon-label": true,
+  "modules-left": [
+  //"image#pusk",
+  //"custom/pusk",
+  "hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["tray", "group/CPU", "group/GPU", "memory", "wireplumber#microphone", "group/playctl", "wireplumber#audio", "hyprland/language", "clock"]
+  //"modules-right": ["tray", "group/CPU", "temperature#gpu", "memory", "pulseaudio#microphone", "group/playctl", "pulseaudio#audio", "hyprland/language", "clock"]
+
+}

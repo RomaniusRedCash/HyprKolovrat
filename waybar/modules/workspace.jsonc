@@ -1,0 +1,26 @@
+{
+    "hyprland/workspaces": {
+        "format": "{name}",
+
+        "persistent-workspaces": {
+            "*": 10,
+            "DP-2" : 10,
+            "DVI-1" : 10
+        },
+        "workspace-taskbar": {
+            "enable": true,
+            "update-active-window": true,
+            "format": "{icon} {title:.20}",
+            "icon-size": 16,
+            "orientation": "horizontal"
+            //"on-click-window": "/some/arbitrary/script {address} {button}"
+        }//,
+//        "persistent-workspaces": {
+//            "*": [ 1,2,3,4 ] // workspace 1 shown on DP-3
+//        }
+    },
+
+    "hyprland/window": {
+        "max-length": 50
+    }
+}

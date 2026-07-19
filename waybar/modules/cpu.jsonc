@@ -1,0 +1,31 @@
+{
+    "cpu": {
+        "interval": 1,
+        "format": "<span size='19pt' rise='-4pt'>{icon}</span>{usage}%",
+        "format-icons": {
+            "default": [""]
+        },
+        "max-length": 10
+    },
+
+    "temperature#cpu": {
+        //"thermal-zone": 2,
+        "interval": 1,
+        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+        //"critical-threshold": 80,
+        //"format-critical": "{icon} {temperatureC}°C",
+        //"format": "{icon} {temperatureC}°C",
+        //"format-icons": ["", "", "", "", ""]
+        "format": "{temperatureC}°C",
+        "tooltip": false
+    },
+
+    "group/CPU": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "temperature#cpu"
+        ]
+    }
+}
+//for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done

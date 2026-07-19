@@ -1,0 +1,113 @@
+@define-color background #ff0000;
+@define-color background-active #000000;
+@define-color background-alt #A90000;
+@define-color separ #af0000;
+@define-color foreground #ffffff;
+@define-color primary #ffffff;
+@define-color secondary #8ABEB7;
+@define-color alert #A54242;
+@define-color alert-alt yellow;
+@define-color disabled #525252;
+@define-color border #000000;
+
+* {
+border: none;
+border-radius: 0;
+font-family: "VHS+icons";
+font-size: 12px;
+min-height: 18px;
+transition: none;
+text-shadow: none;
+box-shadow: none;
+}
+
+#wireplumber.audio, #wireplumber.microphone, #pulseaudio.audio, #pulseaudio.microphone, #cpu, #memory, #custom-pusk, #temperature.gpuAMD
+/*,#custom-gpuNV*/
+{
+margin-top: -8.2pt;
+margin-bottom: -4pt;
+}
+
+#wireplumber.microphone.muted, #wireplumber.audio.muted {
+    color: @disabled;
+}
+
+/*#clock {
+    font-size: 10px;
+}*/
+
+window#waybar {
+    background: @background;
+    border-bottom: 0px solid @border;
+    color: @primary;
+}
+
+tooltip {
+    background: @background-alt;
+    border: 1px solid @border;
+}
+tooltip box {
+    padding: 0px;
+    margin: 0px;
+}
+tooltip label {
+    color: @secondary;
+    padding: 0px;
+    margin: 0px;
+}
+
+#workspaces button {
+padding: 0 5px;
+min-width: 5px;
+background: @background;
+color: @primary;
+}
+
+#workspaces button.active {
+background: @background-active;
+box-shadow: inset 0 -2px 0 @primary;
+}
+
+#workspaces button.empty {
+color: @disabled;
+}
+
+#workspaces button:hover {
+background: @background-alt;
+}
+
+#workspaces button.urgent {
+animation: blink 1s linear infinite;
+}
+
+.modules-center .module {
+    font-family: "minecraft";
+}
+
+.modules-right .module:not(#tray):not(.cpu):not(#custom-gpuNV):not(#custom-pause):not(#custom-next) {
+border-left: 2px solid @separ;
+}
+.module:not(#workspaces) {
+    padding: 0 5px;
+}
+
+.group {
+    border-left: none;
+    padding: 20px 20px; /* или ваши значения для группы */
+}
+
+/*.pusk {
+    margin-left: -1px;
+    margin-right: -3px;
+}*/
+
+#tray{
+padding: 0 5px;
+}
+
+@keyframes blink {
+    to {
+        background-color: @alert;
+        color: @alert-alt;
+    }
+}

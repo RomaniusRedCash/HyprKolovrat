@@ -1,0 +1,62 @@
+@define-color background #ff0000;
+@define-color background-active #000000;
+@define-color background-alt #A90000;
+@define-color separ #af0000;
+@define-color foreground #ffffff;
+@define-color primary #ffffff;
+@define-color secondary #8ABEB7;
+@define-color alert #A54242;
+@define-color alert-alt yellow;
+@define-color disabled #525252;
+@define-color border #000000;
+
+* {
+font-family: "VHS + icons";
+font-size: 10pt;
+color: @primary;
+}
+
+#window {
+background: @background;
+margin: auto;
+padding: 0px;
+border-radius: 0px;
+/* border: 3px solid @border; */
+}
+
+#input {
+padding: 0px;
+margin-top: 3px;
+margin-right: 3px;
+margin-bottom: 3px;
+margin-left: 3px;
+border-radius: 0;
+background: @background;
+}
+
+#outer-box {
+/* padding: 5px; */
+/* border-radius: 0; */
+}
+
+#img {
+margin-right: 0px;
+}
+
+#entry {
+padding: 0px;
+border-radius: 0;
+}
+
+#entry:selected, #expander-box #entry {
+background-color: @background-alt;
+color: @secondary;
+}
+
+#text {
+margin: 3px;
+}
+
+#text:selected, #expander-box #text {
+color: @secondary;
+}

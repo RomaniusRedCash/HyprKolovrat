@@ -1,0 +1,9 @@
+{
+    "name": "QuickShell",
+    "files": [
+        {
+            "recursive": true,
+            "filters": ["*.qml", "*.cpp"]
+        }
+    ]
+}

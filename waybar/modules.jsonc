@@ -1,0 +1,13 @@
+{
+    "include": [
+        "~/.config/waybar/modules/audio.jsonc",
+        "~/.config/waybar/modules/cpu.jsonc",
+        "~/.config/waybar/modules/keyboard.jsonc",
+        "~/.config/waybar/modules/tray.jsonc",
+        "~/.config/waybar/modules/clock.jsonc",
+        "~/.config/waybar/modules/gpu.jsonc",
+        "~/.config/waybar/modules/memory.jsonc",
+        "~/.config/waybar/modules/workspace.jsonc",
+        "~/.config/waybar/modules/pusk.jsonc"
+    ]
+}

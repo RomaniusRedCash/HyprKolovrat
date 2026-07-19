@@ -1,0 +1,22 @@
+{
+    "custom/pusk": {
+        "exec": "~/.config/waybar/modules/start_pusk.sh",
+        //"return-type": "json",
+        "format": "<span size='16pt'>{text}</span>",
+        "on-click": "wofi --show drun",
+    }
+
+//    "image#pusk": {
+//        //"exec": "~/Настройки/hyprland/waybar/modules/pusk_img/anim.sh",
+//        "size": 14,
+//        "interval": 0.1, // частота кадров (1 сек), для плавности ставьте 0.05 (20 fps)
+//        "on-click": "wofi --show drun"
+//    }
+//    "image#pusk": {
+//        "exec": "/home/romaniusredcash/Настройки/hyprland/waybar/modules/pusk_anim.sh",
+//        "path": "/home/romaniusredcash/Настройки/hyprland/waybar/modules/pusk_img/{}.svg",
+//        "size": 14,
+//        "interval": 0.1,
+//        "on-click": "wofi --show drun"
+//    }
+}

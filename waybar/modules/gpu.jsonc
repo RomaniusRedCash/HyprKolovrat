@@ -1,0 +1,22 @@
+{
+    "temperature#gpuAMD": {
+        //"thermal-zone": 1,
+        "interval": 1,
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "format": "<span size='19pt' rise='-5pt'></span><span size='8pt'> amd</span> {temperatureC}°C",
+        "tooltip": false
+    },
+    "custom/gpuNV": {
+        "interval": 1,
+        "exec": "nvidia-smi --query-gpu=temperature.gpu,utilization.gpu --format=csv,noheader,nounits | while IFS=', ' read -r temp util; do echo \"${util}% ${temp}°C\"; done",
+        "format": "<span size='8pt'>nv</span> {}",
+        "tooltip": false
+    },
+    "group/GPU": {
+        "orientation": "horizontal",
+        "modules": [
+            "temperature#gpuAMD",
+            "custom/gpuNV"
+        ]
+    }
+}
